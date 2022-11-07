@@ -24,4 +24,10 @@ public class InputView {
 
         return scanner.nextInt();
     }
+
+    public static String inputParticipantResult() {
+        OutputView.printParticipantResultName();
+
+        return scanner.next();
+    }
 }
