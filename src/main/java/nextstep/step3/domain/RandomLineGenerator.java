@@ -11,10 +11,6 @@ public class RandomLineGenerator {
         this.countOfParticipant = countOfParticipant;
     }
 
-    public static RandomLineGenerator from(final int countOfParticipant) {
-        return new RandomLineGenerator(countOfParticipant);
-    }
-
     public boolean createRandomBoolean(final int position) {
         boolean nextBoolean = random.nextBoolean();
 

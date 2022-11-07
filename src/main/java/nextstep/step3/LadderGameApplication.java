@@ -14,15 +14,15 @@ public class LadderGameApplication {
 
     public static void main(String[] args) {
         final String[] inputParticipantNames = InputView.inputParticipantNames();
-        final ParticipantNames participantNames = ParticipantNames.from(toParticipantNames(inputParticipantNames));
-        final Height ladderHeight = Height.from(InputView.inputLadderHeight());
-        final Ladder ladder = Ladder.of(participantNames, ladderHeight);
+        final ParticipantNames participantNames = new ParticipantNames(toParticipantNames(inputParticipantNames));
+        final Height ladderHeight = new Height(InputView.inputLadderHeight());
+        final Ladder ladder = new Ladder(participantNames, ladderHeight);
         OutputView.printGameResult(ladder);
     }
 
     private static List<ParticipantName> toParticipantNames(String[] inputParticipantNames) {
         return Arrays.stream(inputParticipantNames)
-                .map(name -> ParticipantName.from(name))
+                .map(name -> new ParticipantName(name))
                 .collect(Collectors.toList());
     }
 }

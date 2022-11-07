@@ -7,13 +7,9 @@ public class ParticipantName {
 
     private final String name;
 
-    private ParticipantName(final String name) {
+    public ParticipantName(final String name) {
         validateName(name);
         this.name = name;
-    }
-
-    public static ParticipantName from(final String name) {
-        return new ParticipantName(name);
     }
 
     private void validateName(final String name) {

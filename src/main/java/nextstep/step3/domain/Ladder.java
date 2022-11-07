@@ -8,15 +8,11 @@ public class Ladder {
     private final ParticipantNames participantNames;
     private final List<Line> lines;
 
-    private Ladder(final ParticipantNames participantNames, final Height height) {
+    public Ladder(final ParticipantNames participantNames, final Height height) {
         this.participantNames = participantNames;
         lines = IntStream.range(0, height.value())
-                .mapToObj(i -> Line.from(participantCount()))
+                .mapToObj(i -> new Line(participantCount()))
                 .collect(Collectors.toList());
-    }
-
-    public static Ladder of(final ParticipantNames participantNames, final Height height) {
-        return new Ladder(participantNames, height);
     }
 
     public ParticipantNames getParticipantNames() {

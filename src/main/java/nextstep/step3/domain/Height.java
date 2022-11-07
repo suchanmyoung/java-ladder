@@ -5,13 +5,9 @@ public class Height {
 
     private final int height;
 
-    private Height(int height) {
+    public Height(int height) {
         validateHeight(height);
         this.height = height;
-    }
-
-    public static Height from(int height) {
-        return new Height(height);
     }
 
     private void validateHeight(int height) {

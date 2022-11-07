@@ -7,10 +7,6 @@ public class Link {
         this.isLinked = isLinked;
     }
 
-    public static Link from(boolean point) {
-        return new Link(point);
-    }
-
     public boolean value() {
         return isLinked;
     }

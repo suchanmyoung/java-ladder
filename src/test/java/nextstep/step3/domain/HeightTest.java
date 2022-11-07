@@ -11,7 +11,7 @@ class HeightTest {
     @ParameterizedTest
     @ValueSource(ints = {0, -1, -5, -10})
     void ladder_height_greater_than_0(int negativeNumber) {
-        Assertions.assertThatThrownBy(() -> Height.from(negativeNumber))
-                .isInstanceOf(IllegalArgumentException.class);
+        Assertions.assertThatThrownBy(() -> new Height(negativeNumber))
+            .isInstanceOf(IllegalArgumentException.class);
     }
 }

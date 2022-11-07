@@ -19,7 +19,7 @@ class ParticipantNameTest {
     @ParameterizedTest
     @ValueSource(strings = {"", "  ", "    "})
     void participant_name_not_blank(String blank) {
-        Assertions.assertThatThrownBy(() -> ParticipantName.from(blank))
+        Assertions.assertThatThrownBy(() -> new ParticipantName(blank))
                 .isInstanceOf(IllegalArgumentException.class);
     }
 }

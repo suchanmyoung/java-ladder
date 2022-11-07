@@ -12,7 +12,7 @@ class ParticipantNamesTest {
     @Test
     void participant_count_not_zero() {
         List<ParticipantName> blankList = new ArrayList<>();
-        Assertions.assertThatThrownBy(() -> ParticipantNames.from(blankList))
+        Assertions.assertThatThrownBy(() -> new ParticipantNames(blankList))
                 .isInstanceOf(IllegalArgumentException.class);
     }
 }

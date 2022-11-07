@@ -14,7 +14,7 @@ class RandomLineGeneratorTest {
     @ParameterizedTest()
     @ValueSource(ints = {3, 5, 9, 13})
     void last_point_always_false(int position){
-        nextstep.step2.domain.RandomLineGenerator randomLineGenerator = nextstep.step2.domain.RandomLineGenerator.from(position);
+        RandomLineGenerator randomLineGenerator = new RandomLineGenerator(position);
         boolean randomBoolean = randomLineGenerator.createRandomBoolean(position);
         Assertions.assertThat(randomBoolean).isFalse();
     }
@@ -23,7 +23,7 @@ class RandomLineGeneratorTest {
     @ParameterizedTest
     @ValueSource(ints = {3, 5, 9, 13})
     void one_line_point_always_one(int position) {
-        RandomLineGenerator randomLineGenerator = RandomLineGenerator.from(position);
+        RandomLineGenerator randomLineGenerator = new RandomLineGenerator(position);
         List<Boolean> points = IntStream.rangeClosed(1, position)
                 .mapToObj(i -> randomLineGenerator.createRandomBoolean(i))
                 .collect(Collectors.toList());
