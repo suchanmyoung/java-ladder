@@ -10,6 +10,7 @@ public class LadderGameApplication {
 
     public static void main(String[] args) {
         final String[] inputParticipantNames = InputView.inputParticipantNames();
+        String[] inputGameResult = InputView.inputGameResult();
         final ParticipantNames participantNames = ParticipantNames.createParticipantNamesByStrings(inputParticipantNames);
         final Height ladderHeight = new Height(InputView.inputLadderHeight());
         final Ladder ladder = new Ladder(participantNames, ladderHeight);
