@@ -1,6 +1,8 @@
 package nextstep.step3.domain;
 
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class ParticipantNames {
     private final List<ParticipantName> participantNames;
@@ -8,6 +10,12 @@ public class ParticipantNames {
     public ParticipantNames(final List<ParticipantName> participantNames) {
         validateParticipants(participantNames);
         this.participantNames = participantNames;
+    }
+
+    public static ParticipantNames createParticipantNamesByStrings(String[] participantNames) {
+        return new ParticipantNames(Arrays.stream(participantNames)
+            .map(name -> new ParticipantName(name))
+            .collect(Collectors.toList()));
     }
 
     private void validateParticipants(final List<ParticipantName> participantNames) {

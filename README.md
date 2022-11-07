@@ -44,7 +44,7 @@
     - [ ] RandomLineGenerator 직접 의존함에 따라 테스트 어려운 구조 해결
     - [ ] 사다리 연결 로직 개선
     - [ ] else 문 제거
-    - [ ] toParticipantNames 위치
+    - [x] toParticipantNames 위치 변경
     - [ ] 사다리 높이
 * Step3 - 사다리(실행) 
   * 기능 목록
