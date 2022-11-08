@@ -1,9 +1,6 @@
 package nextstep.step3.view;
 
-import java.util.List;
 import nextstep.step3.domain.Ladder;
-import nextstep.step3.domain.Line;
-import nextstep.step3.domain.ParticipantNames;
 
 public class OutputView {
 
@@ -42,29 +39,10 @@ public class OutputView {
     }
 
     private static void printNames(Ladder ladder) {
-        ParticipantNames participantNames = ladder.getParticipantNames();
-
-        participantNames.getParticipantNames()
-                .stream()
-                .forEach(participant -> System.out.print(participant.getName() +
-                        LADDER_SPACE.repeat(NAME_WHITE_SPACE_SIZE - participant.getName().length())));
         System.out.println();
     }
 
     private static void printLadders(Ladder ladder) {
-        List<Line> lines = ladder.getLines();
-
-        for (Line line : lines) {
-            line.getLinks().stream()
-                    .forEach(link -> {
-                        if (link.value()) {
-                            System.out.print(LADDER_VIEW + LADDER_LINK.repeat(LADDER_WHITE_SPACE_SIZE));
-                        } else {
-                            System.out.print(LADDER_VIEW + LADDER_SPACE.repeat(LADDER_WHITE_SPACE_SIZE));
-                        }
-                    });
-
-            System.out.println();
-        }
+        System.out.println();
     }
 }
